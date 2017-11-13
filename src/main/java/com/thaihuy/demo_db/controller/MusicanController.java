@@ -2,20 +2,14 @@ package com.thaihuy.demo_db.controller;
 
 
 import com.thaihuy.demo_db.domain.Musican;
-import com.thaihuy.demo_db.domain.Song;
 import com.thaihuy.demo_db.model.MusicanModel;
-import com.thaihuy.demo_db.repository.MusicanRepository;
 import com.thaihuy.demo_db.service.MusicanService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
-import javax.xml.ws.Binding;
-import java.awt.print.Pageable;
 import java.math.BigInteger;
-import java.util.List;
+
 @Slf4j
 @RestController
 @RequestMapping("/musicans")
@@ -39,7 +33,7 @@ public class MusicanController {
 
     @PostMapping
     public Musican create(@Valid @RequestBody MusicanForm form) {
-       
+
         return musicanService.create(form);
     }
 
@@ -57,6 +51,5 @@ public class MusicanController {
     public void insertDataTest() {
         musicanService.insertDataTest();
     }
-
 
 }
