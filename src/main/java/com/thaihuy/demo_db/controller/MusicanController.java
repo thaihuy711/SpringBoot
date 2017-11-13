@@ -26,6 +26,11 @@ public class MusicanController {
 //                                                     @RequestParam(defaultValue = "10") Integer size) {
 //        return musicanService.getAllMusicans(page, size);
 //    }
+    //    @GetMapping()
+//    public PagingObject<MusicanModel> getAllMusicans(@RequestParam(defaultValue = "0") Integer page,
+//                                                     @RequestParam(defaultValue = "10") Integer size) {
+//        return musicanService.getAllMusicans(page, size);
+//    }
     @GetMapping()
     public PagingObject<MusicanModel> getAllMusicans(org.springframework.data.domain.Pageable pageable) {
         return musicanService.getAllMusicans(pageable);
