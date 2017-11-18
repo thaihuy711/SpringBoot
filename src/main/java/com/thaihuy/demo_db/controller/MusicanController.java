@@ -12,7 +12,7 @@ import java.math.BigInteger;
 
 @Slf4j
 @RestController
-@RequestMapping("/musicans")
+@RequestMapping(AbstractController.API+ "/musicans")
 public class MusicanController {
     private final MusicanService musicanService;
 
