@@ -1,33 +1,35 @@
 <!doctype html>
 <html ng-app="todoApp">
 <head>
-
-    <link rel="stylesheet" href="todo.css">
-
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components/main.css">
 </head>
 <body>
-<h2>Todo</h2>
-<div ng-controller="TodoListController as todoList">
-    <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-    [ <a href="" ng-click="todoList.archive()">archive</a> ]
-    <ul class="unstyled">
-        <li ng-repeat="todo in todoList.todos">
-            <label class="checkbox">
-                <input type="checkbox" ng-model="todo.done">
-                <span class="done-{{todo.done}}">{{todo.text}}</span>
-            </label>
-        </li>
+<div class="container">
+    <div class="page-header">
+        Musicans Management
+    </div>
+    <ul class="list-inline">
+        <li ui-sref-active="active"><a ui-sref="main">Musican Management</a></li>
+        <li ui-sref-active="active"><a ui-sref="form">Form</a></li>
+        <li ui-sref-active="active"><a ui-sref="delete">Delete</a></li>
     </ul>
-    <form ng-submit="todoList.addTodo()">
-        <input type="text" ng-model="todoList.todoText"  size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-    </form>
 </div>
+<div class="container">
+    <ui-view></ui-view>
+</div>
+<footer>
+    This is page footer
+</footer>
+
+
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/angular/angular.min.js"></script>
 <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
-<script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js "></script>
-<script src=components/main.js></script>
+<script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+<script src="components/main.js"></script>
+<script src="components/main.config.js"></script>
+<script src="components/musican.service.js"></script>
+<script src="components/list/list.controller.js"></script>
 </body>
 </html>
