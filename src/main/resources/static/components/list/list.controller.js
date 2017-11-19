@@ -10,18 +10,20 @@
         vm.create = create;
         vm.search = search;
 
-        musicanService.list().then(function(resp){
+
+        musicanService.list().then(function (resp) {
             vm.musicans = resp;
             $log.info(vm.musicans);
         });
 
 
-        function create(){
+        function create() {
             $log.info('Create musicans');
         }
 
-        function search(filter){
+        function search(filter) {
             $log.info(filter);
         }
+
     }
 })();

@@ -1,6 +1,6 @@
 var todoApp = angular.module('todoApp');
 
-todoApp.config(function($stateProvider) {
+todoApp.config(function ($stateProvider) {
     var mainState = {
         name: 'main',
         url: '/',

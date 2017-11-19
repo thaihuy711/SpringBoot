@@ -7,11 +7,12 @@
 
     function musicanService($log, $http) {
         return {
-            list: list
+            list: list,
+
         };
 
-        function list(filter){
-            return $http.get('/api/musicans').then(function(resp){
+        function list(filter) {
+            return $http.get('/api/musicans').then(function (resp) {
                 return resp.data;
             })
         }
